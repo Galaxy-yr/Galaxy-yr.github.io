@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>莫比乌斯函数的由来及推导</title>
+      <link href="/2019/10/13/mo-bi-wu-si-han-shu-de-you-lai-ji-tui-dao/"/>
+      <url>/2019/10/13/mo-bi-wu-si-han-shu-de-you-lai-ji-tui-dao/</url>
+      
+        <content type="html"><![CDATA[<p>网上搜莫比乌斯函数大多都没有写莫比乌斯函数的由来，而是直接写的定义式，这里对莫比乌斯函数进行推导。<br>学习了狄利克雷卷积后，我们来看以下几个常见的积性函数：</p><p>常函数:$I(n)=1$</p><p>单位元:$\xi(n)=[n=1] (\xi*f=f)$</p><h6 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h6><p>对于一个数我们可以对其求逆，那么函数是否也可以求逆呢？答案是肯定的。我们看下面式子:</p><p>$$ f^{-1}*f=\xi $$</p><p>$f^{-1}$即是我们要的$f$的逆。</p><p>$f^{-1}*f=xi$</p><p>$\Downarrow$</p><p>$\forall n:\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})=[n=1]}$</p><p>若n=1</p><p>$f^{-1}(1)=\frac{1}{f(1)}$</p><p>若n$=\not1$</p><p>$f^{-1}(n)*f(n)=xi(n)$</p><p>$f^{-1}(n)*f(n)=0$</p><p>$$\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})}=0$$</p><p>将d=1从公式中提出来:<br>$$f(1)<em>f^{-1}(n)+\sum_{d|n}{f(d)</em>f^{-1}(\frac{n}{d})}=0　　(d\not=1)$$</p><p>$$f^{-1}(n)=\frac{-\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})}}{f(1)}　　(d\not=1)$$</p><p>$f$的逆即为这个式子了</p><p>那么接下来我们试试把$f=I$,n为质数的逆求出来试试:</p><p>$f^{-1}(p)=\frac{-f(p)*f^{-1}(1)}{f(1)}=-1$</p><p>看看$p^2$:</p><p>$f^{-1}(p^2)=-(f(p^2)<em>f^{-1}(1)+f(p)</em>f^{-1}(p))=0$</p><p>推广到$p^k$</p><p>$f^{-1}(p^k)=-\sum_{i=1}^{k}{f(p^i)*f^{-1}(p^{k-i})}$</p><p>不难看出:当k&gt;1时，$f(p^k)$就等于0了</p><p>所以对于合数$n=p_1^{a_1}p_2^{a_2}…p_k^{a^k}$ 有</p><p>$f^{-1}(n)=f^{-1}(p_1^{a_1})f^{-1}(p_2^{a_2})…f^{-1}(p_k^{a_k})$　($I^{-1}$ 为积性函数)</p><p>(积性函数的逆也是积性函数)<br>证明:<br>设$f$为积性函数,有<br>$f(i<em>j)=f(i)</em>f(j)$<br>$f(i<em>j)</em>f^{-1}(i<em>j)=\xi$<br>$f(i)</em>f^{-1}(i)<em>f(j)</em>f^{-1}(j)=\xi$<br>联立得:<br>$f(i<em>j)</em>f^{-1}(i<em>j)=f(i)</em>f^{-1}(i)<em>f(j)</em>f^{-1}(j)$<br>$f^{-1}(i<em>j)=f^{-1}(i)</em>f^{-1}(j)$<br>证毕</p><p>如果$a_n&gt;1$那么$f(n)=0$</p><p>设$f^{-1}=\mu(I^{-1}=\mu)$,则有:</p><p>$$<br>\mu =<br>\begin{cases}<br>1 　　　n=1\<br>(-1)^k　　　a^1=a^2=…=a^k=1\<br>0 　　　otherwise\<br>\end{cases}$$</p><p>这个便是我们所知的莫比乌斯函数了。</p><p>积性函数的逆也是积性函数。</p><p>由我们的推导可知：</p><p>$\mu<em>I=\xi　\xi</em>f=f$</p><p>设$f*I=g$</p><p>$f<em>I</em>\mu=g<em>\mu$<br>*</em>公式**</p><ul><li>$g(n)=\sum_{d|n}{f(d)}　 \Leftarrow\Rightarrow　f(n)=\sum_{d|n}{\mu(d)g(\frac{n}{d})}$</li><li>$g(n)=\sum_{n|d}{f(d)}　 \Leftarrow\Rightarrow　f(n)=\sum_{n|d}{\mu(d)g(\frac{d}{n})}$</li></ul><p><strong>证明</strong><br><strong>方法一：逆推</strong></p><ul><li><p>$$\sum_{d|n}{\mu(d)g(\frac{n}{d})}=\sum_{d|n}{\mu(d)\sum_{x|\frac{n}{d}}{f(x)}=\sum_{x|n}{f(x)}\sum_{d|\frac{n}{x}}{\mu(d)}=\sum_{x|n}{f(x)[\frac{n}{x}=1]}}=f(n)$$</p></li><li><p><strong>第二个式子同理</strong></p></li></ul><p><strong>方法二：卷积法(因为好多人不知道$\mu$的性质所以不知道这点)</strong><br>$g=f<em>I$<br>$g</em>\mu=f<em>I</em>\mu$<br>$g<em>\mu=f</em>\xi$<br>$g*\mu=f$<br>得证</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>给OIer节约5s的快速创建子目录的程序</title>
       <link href="/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/"/>
       <url>/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/</url>

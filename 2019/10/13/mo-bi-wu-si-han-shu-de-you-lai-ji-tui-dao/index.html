@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="给OIer节约5s的快速创建子目录的程序, Galaxy yr">
-    <meta name="description" content="每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～
-用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个">
+    <meta name="keywords" content="莫比乌斯函数的由来及推导, Galaxy yr">
+    <meta name="description" content="网上搜莫比乌斯函数大多都没有写莫比乌斯函数的由来，而是直接写的定义式，这里对莫比乌斯函数进行推导。学习了狄利克雷卷积后，我们来看以下几个常见的积性函数：
+常函数:$I(n)=1$
+单位元:$\xi(n)=[n=1] (\xi*f=f)$
+莫">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>给OIer节约5s的快速创建子目录的程序 | Galaxy yr</title>
+    <title>莫比乌斯函数的由来及推导 | Galaxy yr</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -287,13 +289,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/source/medias/featureimages/53.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/43.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        给OIer节约5s的快速创建子目录的程序
+                        莫比乌斯函数的由来及推导
                     </div>
                 </div>
             </div>
@@ -422,7 +424,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        774
+                        690
                     </div>
                     
 
@@ -445,163 +447,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～</p>
-<p>用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个文件夹，同时把文件复制进去</p>
-<p>方法: 复制以下内容到一个叫做”Mkdir”的文件里<br><a href="https://www.galaxyyr.xyz" target="_blank" rel="noopener">宣传一波个人博客</a></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> <span class="token string">"-h"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"---------------------------------------------------------------------------------"</span>
-    <span class="token keyword">echo</span>
-    <span class="token keyword">echo</span> <span class="token string">"-h  --help         输出此帮助界面"</span>
-    <span class="token keyword">echo</span> <span class="token string">"-a  --ask          按询问模式执行"</span>
-    <span class="token keyword">echo</span> <span class="token string">"-q  --quiet        安静的执行程序"</span>
-    <span class="token keyword">echo</span> <span class="token string">"-c  --copy         仅仅将文件复制进文件夹"</span>
-    <span class="token keyword">echo</span> <span class="token string">"文件名             shell默认跳出参数 并将后面的变量不创建文件夹(且删除此文件目录)"</span>
-    <span class="token keyword">echo</span>
-    <span class="token keyword">echo</span> <span class="token string">"例： Mkdir a.cpp b.cpp"</span>
-    <span class="token keyword">echo</span>
-    <span class="token keyword">echo</span> <span class="token string">"这将不会为a.cpp b.cpp创建目录，且如果也会删掉和文件 询问模式除外"</span>
-    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m默认复制并替换文件 \033[;0m"</span>
-    <span class="token keyword">echo</span>
-    <span class="token keyword">echo</span> <span class="token string">"---------------------------------------------------------------------------------"</span>
-    <span class="token keyword">exit</span> 0
-<span class="token keyword">fi</span>
-ask<span class="token operator">=</span>0
-quiet<span class="token operator">=</span>0
-copy<span class="token operator">=</span>0
-<span class="token keyword">while</span> <span class="token function">getopts</span> ayqc opt
-<span class="token keyword">do</span>
-    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$opt</span>"</span> <span class="token keyword">in</span>
-        a<span class="token punctuation">)</span>ask<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        q<span class="token punctuation">)</span>quiet<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        c<span class="token punctuation">)</span>copy<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
-        *<span class="token punctuation">)</span> <span class="token keyword">echo</span> <span class="token string">"未知的参数!"</span>  <span class="token punctuation">;</span><span class="token punctuation">;</span>
-    esac
-<span class="token keyword">done</span>
-<span class="token keyword">if</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"-"</span> <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
-<span class="token keyword">then</span>
-    <span class="token function">shift</span>
-<span class="token keyword">fi</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"以询问模式执行..."</span>
-<span class="token keyword">fi</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$copy</span> -eq 1 <span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"以copy模式执行..."</span>
-<span class="token keyword">fi</span>
-<span class="token keyword">for</span> <span class="token function">file</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">ls</span> *.cpp<span class="token variable">`</span></span>
-<span class="token keyword">do</span>
-    pre<span class="token operator">=</span>`echo <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">'.'</span> -f1`
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> $<span class="token comment" spellcheck="true"># -ne 0 ]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">for</span> list <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span>
-        <span class="token keyword">do</span>
-            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$list</span> <span class="token operator">=</span> <span class="token variable">$file</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-                <span class="token comment" spellcheck="true">#if  echo "$file" | grep "$*" >/dev/null 2>&amp;1</span>
-            <span class="token keyword">then</span>
-                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
-                <span class="token keyword">then</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$pre</span> <span class="token punctuation">]</span>
-                    <span class="token keyword">then</span>
-                        <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 找到 <span class="token variable">$pre</span> 文件夹，是否删除?\033[0m"</span>
-                        <span class="token function">read</span> -l opt
-                        <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-                        <span class="token keyword">then</span>
-                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$pre</span> 文件夹.\033[0m"</span>
-                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$file</span> 文件.\033[0m"</span>
-                            <span class="token keyword">echo</span>
-                            <span class="token function">rm</span> -rf <span class="token variable">$pre</span>
-                            <span class="token function">rm</span> <span class="token variable">$file</span>
-                        <span class="token keyword">else</span>
-                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 保留原文件夹\033[0m"</span>
-                        <span class="token keyword">fi</span>
-                    <span class="token keyword">fi</span>
-                <span class="token keyword">else</span>
-                    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$pre</span> 文件夹.\033[0m"</span>
-                    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$file</span> 文件.\033[0m"</span>
-                    <span class="token keyword">echo</span>
-                    <span class="token function">rm</span> -rf <span class="token variable">$pre</span>
-                    <span class="token function">rm</span> <span class="token variable">$file</span>
-                <span class="token keyword">fi</span>
-                <span class="token keyword">continue</span> 2
-            <span class="token keyword">fi</span>
-        <span class="token keyword">done</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$copy</span> -eq 1 <span class="token punctuation">]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 复制 <span class="token variable">$file</span> 进入 <span class="token variable">$pre</span> 文件夹...\033[0m"</span>
-        <span class="token function">cp</span> <span class="token variable">$file</span> <span class="token variable">$pre</span>
-        <span class="token keyword">continue</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 正在创建 '<span class="token variable">$pre</span>' 文件夹 ... \033[0m"</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token string">"<span class="token variable">$pre</span>"</span> <span class="token punctuation">]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m <span class="token variable">$pre</span> 文件夹已经存在 \033[0m"</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 是否创建 <span class="token variable">$pre</span> 文件夹?(y/n)\033[0m"</span>
-            <span class="token function">read</span>  -l opt
-            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">==</span> y <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-            <span class="token keyword">then</span>
-                <span class="token function">mkdir</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
-            <span class="token keyword">else</span>
-                <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 跳过此文件\033[0m"</span>
-                <span class="token keyword">continue</span>
-            <span class="token keyword">fi</span>
-        <span class="token keyword">else</span>
-            <span class="token function">mkdir</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
-        <span class="token keyword">fi</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;37m <span class="token variable">$pre</span> 文件夹创建成功 \033[0m"</span>
-        <span class="token keyword">fi</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 正在复制 <span class="token variable">$file</span> 到 <span class="token variable">$pre</span> 文件夹 ... \033[0m"</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$pre</span>/<span class="token variable">$file</span>"</span> <span class="token punctuation">]</span>
-    <span class="token keyword">then</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 文件 <span class="token variable">$file</span> 已经存在! \033[0m"</span>
-        <span class="token keyword">fi</span>
-        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 是否强制替换?(y/n) \033[0m"</span>
-            <span class="token function">read</span> opt
-            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">==</span> y <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-            <span class="token keyword">then</span>
-                <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
-            <span class="token keyword">fi</span>
-        <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
-        <span class="token keyword">then</span>
-            <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 强制替换文件 \033[0m"</span>
-        <span class="token keyword">fi</span>
-        <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
-    <span class="token keyword">else</span>
-        <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
-    <span class="token keyword">fi</span>
-    <span class="token keyword">echo</span>
-<span class="token keyword">done</span>
-<span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 程序执行结束\033[0m"</span>
-</code></pre>
-<p>然后</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> 777 Mkdir
-<span class="token function">sudo</span> <span class="token function">mv</span> Mkdir /bin
-Mkdir -h</code></pre>
-<p>效果图:</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDUvMjUvNWNlOTAxNDM5N2JjYjc1ODQ0LnBuZw?x-oss-process=image/format,png" alt></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDUvMjUvNWNlOTAxNDJhYmFmNjYzMTI2LnBuZw?x-oss-process=image/format,png" alt></p>
+                <p>网上搜莫比乌斯函数大多都没有写莫比乌斯函数的由来，而是直接写的定义式，这里对莫比乌斯函数进行推导。<br>学习了狄利克雷卷积后，我们来看以下几个常见的积性函数：</p>
+<p>常函数:$I(n)=1$</p>
+<p>单位元:$\xi(n)=[n=1] (\xi*f=f)$</p>
+<h6 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h6><p>对于一个数我们可以对其求逆，那么函数是否也可以求逆呢？答案是肯定的。我们看下面式子:</p>
+<p>$$ f^{-1}*f=\xi $$</p>
+<p>$f^{-1}$即是我们要的$f$的逆。</p>
+<p>$f^{-1}*f=xi$</p>
+<p>$\Downarrow$</p>
+<p>$\forall n:\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})=[n=1]}$</p>
+<p>若n=1</p>
+<p>$f^{-1}(1)=\frac{1}{f(1)}$</p>
+<p>若n$=\not1$</p>
+<p>$f^{-1}(n)*f(n)=xi(n)$</p>
+<p>$f^{-1}(n)*f(n)=0$</p>
+<p>$$\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})}=0$$</p>
+<p>将d=1从公式中提出来:<br>$$f(1)<em>f^{-1}(n)+\sum_{d|n}{f(d)</em>f^{-1}(\frac{n}{d})}=0　　(d\not=1)$$</p>
+<p>$$f^{-1}(n)=\frac{-\sum_{d|n}{f(d)*f^{-1}(\frac{n}{d})}}{f(1)}　　(d\not=1)$$</p>
+<p>$f$的逆即为这个式子了</p>
+<p>那么接下来我们试试把$f=I$,n为质数的逆求出来试试:</p>
+<p>$f^{-1}(p)=\frac{-f(p)*f^{-1}(1)}{f(1)}=-1$</p>
+<p>看看$p^2$:</p>
+<p>$f^{-1}(p^2)=-(f(p^2)<em>f^{-1}(1)+f(p)</em>f^{-1}(p))=0$</p>
+<p>推广到$p^k$</p>
+<p>$f^{-1}(p^k)=-\sum_{i=1}^{k}{f(p^i)*f^{-1}(p^{k-i})}$</p>
+<p>不难看出:当k&gt;1时，$f(p^k)$就等于0了</p>
+<p>所以对于合数$n=p_1^{a_1}p_2^{a_2}…p_k^{a^k}$ 有</p>
+<p>$f^{-1}(n)=f^{-1}(p_1^{a_1})f^{-1}(p_2^{a_2})…f^{-1}(p_k^{a_k})$　($I^{-1}$ 为积性函数)</p>
+<p>(积性函数的逆也是积性函数)<br>证明:<br>设$f$为积性函数,有<br>$f(i<em>j)=f(i)</em>f(j)$<br>$f(i<em>j)</em>f^{-1}(i<em>j)=\xi$<br>$f(i)</em>f^{-1}(i)<em>f(j)</em>f^{-1}(j)=\xi$<br>联立得:<br>$f(i<em>j)</em>f^{-1}(i<em>j)=f(i)</em>f^{-1}(i)<em>f(j)</em>f^{-1}(j)$<br>$f^{-1}(i<em>j)=f^{-1}(i)</em>f^{-1}(j)$<br>证毕</p>
+<p>如果$a_n&gt;1$那么$f(n)=0$</p>
+<p>设$f^{-1}=\mu(I^{-1}=\mu)$,则有:</p>
+<p>$$<br>\mu =<br>\begin{cases}<br>1 　　　n=1\<br>(-1)^k　　　a^1=a^2=…=a^k=1\<br>0 　　　otherwise\<br>\end{cases}$$</p>
+<p>这个便是我们所知的莫比乌斯函数了。</p>
+<p>积性函数的逆也是积性函数。</p>
+<p>由我们的推导可知：</p>
+<p>$\mu<em>I=\xi　\xi</em>f=f$</p>
+<p>设$f*I=g$</p>
+<p>$f<em>I</em>\mu=g<em>\mu$<br>*</em>公式**</p>
+<ul>
+<li>$g(n)=\sum_{d|n}{f(d)}　 \Leftarrow\Rightarrow　f(n)=\sum_{d|n}{\mu(d)g(\frac{n}{d})}$</li>
+<li>$g(n)=\sum_{n|d}{f(d)}　 \Leftarrow\Rightarrow　f(n)=\sum_{n|d}{\mu(d)g(\frac{d}{n})}$</li>
+</ul>
+<p><strong>证明</strong><br><strong>方法一：逆推</strong></p>
+<ul>
+<li><p>$$\sum_{d|n}{\mu(d)g(\frac{n}{d})}=\sum_{d|n}{\mu(d)\sum_{x|\frac{n}{d}}{f(x)}=\sum_{x|n}{f(x)}\sum_{d|\frac{n}{x}}{\mu(d)}=\sum_{x|n}{f(x)[\frac{n}{x}=1]}}=f(n)$$</p>
+</li>
+<li><p><strong>第二个式子同理</strong></p>
+</li>
+</ul>
+<p><strong>方法二：卷积法(因为好多人不知道$\mu$的性质所以不知道这点)</strong><br>$g=f<em>I$<br>$g</em>\mu=f<em>I</em>\mu$<br>$g<em>\mu=f</em>\xi$<br>$g*\mu=f$<br>得证</p>
 
             </div>
             <hr/>
@@ -636,9 +530,9 @@ Mkdir -h</code></pre>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《给OIer节约5s的快速创建子目录的程序》
+                    《莫比乌斯函数的由来及推导》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/13/mo-bi-wu-si-han-shu-de-you-lai-ji-tui-dao/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Galaxy yr
             </a> 采用
@@ -678,9 +572,10 @@ Mkdir -h</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/13/mo-bi-wu-si-han-shu-de-you-lai-ji-tui-dao/">
                     <div class="card-image">
@@ -701,9 +596,9 @@ Mkdir -h</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -712,6 +607,7 @@ Mkdir -h</code></pre>
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -722,20 +618,19 @@ Mkdir -h</code></pre>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/13/kd-shu-xiang-jie/">
+                <a href="/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/">
                     <div class="card-image">
                         
+                        <img src="/source/medias/featureimages/53.jpg" class="responsive-img" alt="给OIer节约5s的快速创建子目录的程序">
                         
-                        <img src="/medias/featureimages/63.jpg" class="responsive-img" alt="算法-KD树">
-                        
-                        <span class="card-title">算法-KD树</span>
+                        <span class="card-title">给OIer节约5s的快速创建子目录的程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            K-Dimension-Tree (KDT)顾名思义，kd树其实就是多维二叉树（空间二叉树的一种特殊情况）， 里面储存着k维的点的信息，是对k维空间进行划分的一种数据结构。在竞赛中一般用来解决二维空间和三维空间的信息检索
-KD树可以解决以下
+                            每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～
+用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个
                         
                     </div>
                     <div class="publish-info">
@@ -744,23 +639,11 @@ KD树可以解决以下
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/算法/" class="post-category" target="_blank">
-                                    算法
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Galaxy yr
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/KD树/" target="_blank">
-                        <span class="chip bg-color">KD树</span>
-                    </a>
-                    
                 </div>
                 
             </div>
