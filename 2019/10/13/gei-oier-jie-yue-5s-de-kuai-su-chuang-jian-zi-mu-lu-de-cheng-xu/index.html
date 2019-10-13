@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Galaxy yr">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="给OIer节约5s的快速创建子目录的程序, Galaxy yr">
+    <meta name="description" content="每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～
+用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Galaxy yr</title>
+    <title>给OIer节约5s的快速创建子目录的程序 | Galaxy yr</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -29,6 +30,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
 
 
 <body>
@@ -285,13 +287,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/medias/featureimages/53.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        给OIer节约5s的快速创建子目录的程序
                     </div>
                 </div>
             </div>
@@ -420,14 +422,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        774
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -443,15 +445,163 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <p>每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～</p>
+<p>用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个文件夹，同时把文件复制进去</p>
+<p>方法: 复制以下内容到一个叫做”Mkdir”的文件里<br><a href="https://www.galaxyyr.xyz" target="_blank" rel="noopener">宣传一波个人博客</a></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> <span class="token string">"-h"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token keyword">echo</span> <span class="token string">"---------------------------------------------------------------------------------"</span>
+    <span class="token keyword">echo</span>
+    <span class="token keyword">echo</span> <span class="token string">"-h  --help         输出此帮助界面"</span>
+    <span class="token keyword">echo</span> <span class="token string">"-a  --ask          按询问模式执行"</span>
+    <span class="token keyword">echo</span> <span class="token string">"-q  --quiet        安静的执行程序"</span>
+    <span class="token keyword">echo</span> <span class="token string">"-c  --copy         仅仅将文件复制进文件夹"</span>
+    <span class="token keyword">echo</span> <span class="token string">"文件名             shell默认跳出参数 并将后面的变量不创建文件夹(且删除此文件目录)"</span>
+    <span class="token keyword">echo</span>
+    <span class="token keyword">echo</span> <span class="token string">"例： Mkdir a.cpp b.cpp"</span>
+    <span class="token keyword">echo</span>
+    <span class="token keyword">echo</span> <span class="token string">"这将不会为a.cpp b.cpp创建目录，且如果也会删掉和文件 询问模式除外"</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m默认复制并替换文件 \033[;0m"</span>
+    <span class="token keyword">echo</span>
+    <span class="token keyword">echo</span> <span class="token string">"---------------------------------------------------------------------------------"</span>
+    <span class="token keyword">exit</span> 0
+<span class="token keyword">fi</span>
+ask<span class="token operator">=</span>0
+quiet<span class="token operator">=</span>0
+copy<span class="token operator">=</span>0
+<span class="token keyword">while</span> <span class="token function">getopts</span> ayqc opt
+<span class="token keyword">do</span>
+    <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$opt</span>"</span> <span class="token keyword">in</span>
+        a<span class="token punctuation">)</span>ask<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        q<span class="token punctuation">)</span>quiet<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">)</span>copy<span class="token operator">=</span>1 <span class="token punctuation">;</span><span class="token punctuation">;</span>
+        *<span class="token punctuation">)</span> <span class="token keyword">echo</span> <span class="token string">"未知的参数!"</span>  <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    esac
+<span class="token keyword">done</span>
+<span class="token keyword">if</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"-"</span> <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1
+<span class="token keyword">then</span>
+    <span class="token function">shift</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token keyword">echo</span> <span class="token string">"以询问模式执行..."</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$copy</span> -eq 1 <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+    <span class="token keyword">echo</span> <span class="token string">"以copy模式执行..."</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">for</span> <span class="token function">file</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">ls</span> *.cpp<span class="token variable">`</span></span>
+<span class="token keyword">do</span>
+    pre<span class="token operator">=</span>`echo <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">'.'</span> -f1`
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> $<span class="token comment" spellcheck="true"># -ne 0 ]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">for</span> list <span class="token keyword">in</span> <span class="token string">"<span class="token variable">$@</span>"</span>
+        <span class="token keyword">do</span>
+            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$list</span> <span class="token operator">=</span> <span class="token variable">$file</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+                <span class="token comment" spellcheck="true">#if  echo "$file" | grep "$*" >/dev/null 2>&amp;1</span>
+            <span class="token keyword">then</span>
+                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
+                <span class="token keyword">then</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$pre</span> <span class="token punctuation">]</span>
+                    <span class="token keyword">then</span>
+                        <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 找到 <span class="token variable">$pre</span> 文件夹，是否删除?\033[0m"</span>
+                        <span class="token function">read</span> -l opt
+                        <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+                        <span class="token keyword">then</span>
+                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$pre</span> 文件夹.\033[0m"</span>
+                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$file</span> 文件.\033[0m"</span>
+                            <span class="token keyword">echo</span>
+                            <span class="token function">rm</span> -rf <span class="token variable">$pre</span>
+                            <span class="token function">rm</span> <span class="token variable">$file</span>
+                        <span class="token keyword">else</span>
+                            <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 保留原文件夹\033[0m"</span>
+                        <span class="token keyword">fi</span>
+                    <span class="token keyword">fi</span>
+                <span class="token keyword">else</span>
+                    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$pre</span> 文件夹.\033[0m"</span>
+                    <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 删除 <span class="token variable">$file</span> 文件.\033[0m"</span>
+                    <span class="token keyword">echo</span>
+                    <span class="token function">rm</span> -rf <span class="token variable">$pre</span>
+                    <span class="token function">rm</span> <span class="token variable">$file</span>
+                <span class="token keyword">fi</span>
+                <span class="token keyword">continue</span> 2
+            <span class="token keyword">fi</span>
+        <span class="token keyword">done</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$copy</span> -eq 1 <span class="token punctuation">]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 复制 <span class="token variable">$file</span> 进入 <span class="token variable">$pre</span> 文件夹...\033[0m"</span>
+        <span class="token function">cp</span> <span class="token variable">$file</span> <span class="token variable">$pre</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 正在创建 '<span class="token variable">$pre</span>' 文件夹 ... \033[0m"</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token string">"<span class="token variable">$pre</span>"</span> <span class="token punctuation">]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m <span class="token variable">$pre</span> 文件夹已经存在 \033[0m"</span>
+        <span class="token keyword">fi</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 是否创建 <span class="token variable">$pre</span> 文件夹?(y/n)\033[0m"</span>
+            <span class="token function">read</span>  -l opt
+            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">==</span> y <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+            <span class="token keyword">then</span>
+                <span class="token function">mkdir</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
+            <span class="token keyword">else</span>
+                <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 跳过此文件\033[0m"</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">fi</span>
+        <span class="token keyword">else</span>
+            <span class="token function">mkdir</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
+        <span class="token keyword">fi</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;37m <span class="token variable">$pre</span> 文件夹创建成功 \033[0m"</span>
+        <span class="token keyword">fi</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 正在复制 <span class="token variable">$file</span> 到 <span class="token variable">$pre</span> 文件夹 ... \033[0m"</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -f <span class="token string">"<span class="token variable">$pre</span>/<span class="token variable">$file</span>"</span> <span class="token punctuation">]</span>
+    <span class="token keyword">then</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 文件 <span class="token variable">$file</span> 已经存在! \033[0m"</span>
+        <span class="token keyword">fi</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$ask</span> -eq 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;33m 是否强制替换?(y/n) \033[0m"</span>
+            <span class="token function">read</span> opt
+            <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">==</span> y <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$opt</span> <span class="token operator">=</span> <span class="token string">'Y'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+            <span class="token keyword">then</span>
+                <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
+            <span class="token keyword">fi</span>
+        <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$quiet</span> -ne 1 <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\033[;32m 强制替换文件 \033[0m"</span>
+        <span class="token keyword">fi</span>
+        <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
+    <span class="token keyword">else</span>
+        <span class="token function">cp</span> <span class="token string">"<span class="token variable">$file</span>"</span> <span class="token string">"<span class="token variable">$pre</span>"</span>
+    <span class="token keyword">fi</span>
+    <span class="token keyword">echo</span>
+<span class="token keyword">done</span>
+<span class="token keyword">echo</span> -e <span class="token string">"\033[;31m 程序执行结束\033[0m"</span>
+</code></pre>
+<p>然后</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> 777 Mkdir
+<span class="token function">sudo</span> <span class="token function">mv</span> Mkdir /bin
+Mkdir -h</code></pre>
+<p>效果图:</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDUvMjUvNWNlOTAxNDM5N2JjYjc1ODQ0LnBuZw?x-oss-process=image/format,png" alt></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDUvMjUvNWNlOTAxNDJhYmFmNjYzMTI2LnBuZw?x-oss-process=image/format,png" alt></p>
 
             </div>
             <hr/>
@@ -486,9 +636,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《给OIer节约5s的快速创建子目录的程序》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/13/hello-world/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Galaxy yr
             </a> 采用
@@ -533,19 +683,19 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/10/13/hello-world/">
+                <a href="/2019/10/13/gei-oier-jie-yue-5s-de-kuai-su-chuang-jian-zi-mu-lu-de-cheng-xu/">
                     <div class="card-image">
                         
+                        <img src="/source/medias/featureimages/53.jpg" class="responsive-img" alt="给OIer节约5s的快速创建子目录的程序">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">给OIer节约5s的快速创建子目录的程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            每次考试考完的时候教练都会要求建立子目录，然后又会在这个时候浪费我们生命中美好的5s，这个时候，这个轮子孕育而生，有了它，你就比其他人多拥有了5s的美好时光～
+用法：在选手文件夹下输入Mkdir回车，即可为当前文件夹的所有cpp文件创建一个
                         
                     </div>
                     <div class="publish-info">
@@ -568,22 +718,23 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/13/hello-world/">
+                <a href="/2019/10/13/kd-shu-xiang-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/63.jpg" class="responsive-img" alt="算法-KD树">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">算法-KD树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            K-Dimension-Tree (KDT)顾名思义，kd树其实就是多维二叉树（空间二叉树的一种特殊情况）， 里面储存着k维的点的信息，是对k维空间进行划分的一种数据结构。在竞赛中一般用来解决二维空间和三维空间的信息检索
+KD树可以解决以下
                         
                     </div>
                     <div class="publish-info">
@@ -592,13 +743,24 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Galaxy yr
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/KD树/" target="_blank">
+                        <span class="chip bg-color">KD树</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -707,6 +869,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -716,7 +885,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73</span>&nbsp;字
+                class="white-color">6.1k</span>&nbsp;字
             
             
             
